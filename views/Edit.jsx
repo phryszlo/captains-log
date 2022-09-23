@@ -3,6 +3,9 @@ const DefaultLayout = require("./layouts/default");
 class New extends React.Component {
   render() {
     const { log } = this.props;
+    const handleCancel = (e) => {
+
+    }
     return (
       <DefaultLayout title={`Edit entry "${log.title}"`}>
         <div>
@@ -16,7 +19,7 @@ class New extends React.Component {
             </div>
             <div className="form-field">
               <div className="form-label">Entry:</div>
-              <input type="textarea" rows="10" cols="20" wrap="hard" name="entry" defaultValue={log.entry} />
+              <textarea rows="10" cols="40" wrap="hard" name="entry" defaultValue={log.entry} />
             </div>
             <div className="form-field">
               <div className="form-label">Ship is broken:</div>
@@ -28,8 +31,10 @@ class New extends React.Component {
               }
             </div>
             <div className="form-label"></div>
-
-            <input type="submit" name="" value="SUBMIT" />
+            <div className="edit-buttons">
+              <input type="submit" name="" value="SUBMIT" />
+              <a className="cancel-edit" href="/logs">CANCEL</a>
+            </div>
           </form>
         </div>
       </DefaultLayout>

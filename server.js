@@ -6,20 +6,20 @@ var favicon = require('serve-favicon');
 const Log = require('./models/log.js');
 
 require('dotenv').config(); 
-
+  
 const app = new express();
 const PORT = process.env.PORT || 3000;  
- 
+     
 // Middlewares
 app.use(express.static('public')); 
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
-
+   
 // this a body parser
 app.use(express.urlencoded({ extended: false }));
-
+ 
 // look it up    
 app.use(methodOverride("_method"))
   

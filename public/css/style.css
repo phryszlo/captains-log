@@ -2,7 +2,7 @@
 
 :root {
   --back-color: #1202;
-  --fore-color: #f85;
+  --fore-color: rgb(8, 24, 107);
 }
 
 body {
@@ -18,6 +18,9 @@ body {
   text-shadow: .3px .5px black;
   font-family: monospace;
 }
+body * {
+  font-family: monospace;
+}
 
 li {
   list-style: none;
@@ -25,7 +28,7 @@ li {
 
 input[type=textarea] {
   height: 130px;
-  width: 220px;
+  width: 220px;  
 }
 
 nav {
@@ -40,7 +43,7 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: flex-start;
+  align-items: center;
   width: 280px;
   margin: auto;
   padding-top: 1em;
@@ -54,9 +57,10 @@ nav {
 }
 
 .title {
-  text-shadow: .3px .5px black;
+  text-shadow: .3px .5px orangered;
   width: fit-content;
   margin: .5em auto;
+  font-family: monospace;
 }
 
 .form {
@@ -73,7 +77,9 @@ nav {
 
 .form-field {
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  align-items: flex-start;
   margin-bottom: .3em;
 }
 
@@ -84,6 +90,11 @@ nav {
   margin-right: .6em;
 }
 
+.form-field input[type=text] {
+  width: 22em;
+  font-family: monospace;
+}
+
 .log-entry-form input[type=submit] {
   display: block;
   margin: auto;
@@ -91,7 +102,7 @@ nav {
 .entry-title-wrapper {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  /* align-items: flex-start; */
   width: 220px;
   height: fit-content;
   margin: 0 auto;
@@ -105,7 +116,7 @@ nav {
   bottom: .3em;
   color: limegreen;
   text-decoration:  underline;
-  margin: 1em .4em;
+  margin: 1em auto;
 }
 .entry-display-title::before {
   content: '___';
@@ -139,10 +150,31 @@ a {
   color: black;
 }
 
-.edit-link {
+.cancel-edit {
   border: .3px solid black;
   background-color: white;
   padding: .2em;
+  margin-bottom: .5em;
+}
+
+.edit-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  justify-content: space-around;
+  align-items: center;
+}
+.edit-buttons * {
+  width: 5em;
+  text-align: center;
+  padding: 0;
+}
+.edit-link {
+  display: block;
+  border: .3px solid black;
+  background-color: white;
+  padding: 1em .2em;
   margin-bottom: .5em;
 }
 

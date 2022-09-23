@@ -17,7 +17,11 @@ class Index extends React.Component {
               <li key={index}>
                 <div className="time-stamp-wrapper">
                   <h6 className="time-stamp">{
-                    new Date(log.createdAt).toDateString()
+                    log.createdAt ?
+                    `${new Date(log.createdAt).toDateString()} 
+                    ${new Date(log.createdAt).toLocaleTimeString('en-US')}`
+                    :
+                    `entered before captain added timestamps`
                   }</h6>
                 </div>
                 <div className="entry-title-wrapper">
@@ -29,8 +33,12 @@ class Index extends React.Component {
 
                 <div>Is the ship broken?
                   {log.shipIsBroken
-                    ? <span className='icon-span' style={{ color: '#333' }}>{`  😮 Yes. ✅ 🔴 ⚡🚭🆘☣️☢️  `}</span>
-                    : <span className='icon-span' style={{ color: '#333' }}>{`  😀 No.  🟢 🆗 `}</span>
+                    ? <span className='icon-span' style={{ color: '#333' }}>
+                      {`  😮 Yes. ✅ 🔴 ⚡🚭🆘☣️☢️  `}
+                    </span>
+                    : <span className='icon-span' style={{ color: '#333' }}>
+                      {`  😀 No.  🟢 🆗 `}
+                    </span>
                   }
                 </div>
                 <br />
