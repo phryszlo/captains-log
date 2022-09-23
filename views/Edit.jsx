@@ -2,27 +2,34 @@ const React = require("react");
 const DefaultLayout = require("./layouts/default");
 class New extends React.Component {
   render() {
-    const { student } = this.props;
+    const { log } = this.props;
     return (
-      <DefaultLayout title={"Edit Student Page"}>
+      <DefaultLayout title={`Edit entry "${log.title}"`}>
         <div>
-          <h1>Edit {student.name}</h1>
           <form
-            action={`/students/${student.id}?_method=PUT`}
+            className="form log-entry-form"
+            action={`/logs/${log.id}?_method=PUT`}
             method="POST">
-            Name: <input type="text" name="name" defaultValue={student.name} />
-            <br />
-            gpa: <input type="text" name="gpa" defaultValue={student.gpa} />
-            <br />
-            Eligible for Graduation
-            {student.isPassing ? (
-                <input type="checkbox" name="isPassing" defaultChecked />
+            <div className="form-field">
+              <div className="form-label">Title:</div>
+              <input type="text" name="title" defaultValue={log.title} />
+            </div>
+            <div className="form-field">
+              <div className="form-label">Entry:</div>
+              <input type="textarea" rows="10" cols="20" wrap="hard" name="entry" defaultValue={log.entry} />
+            </div>
+            <div className="form-field">
+              <div className="form-label">Ship is broken:</div>
+              {log.shipIsBroken ? (
+                <input type="checkbox" title="shipIsBroken" defaultChecked />
               ) : (
-                <input type="checkbox" name="isPassing" />
+                <input type="checkbox" title="shipIsBroken" />
               )
-            }
-            <br />
-            <input type="submit" name="" value="EDIT" />
+              }
+            </div>
+            <div className="form-label"></div>
+
+            <input type="submit" name="" value="SUBMIT" />
           </form>
         </div>
       </DefaultLayout>

@@ -36,6 +36,7 @@ mongoose.connection.once('open', () => {
 app.get('/', (req, res) => {
   res.redirect("/logs");
 })
+
 app.get('/logs', async (req, res) => {
   await Log.find()  
     .then((allLogs) => {
@@ -51,7 +52,6 @@ app.get('/logs', async (req, res) => {
 
     
 // New
-
 app.get('/logs/new', (req,res ) => {
   res.render('New', {});
 })
@@ -80,7 +80,7 @@ app.get('/logs/:id/edit', async (req, res) => {
   await Log.findById(req.params.id)
     .then((foundLog) => {
       res.render('Edit', {
-        student: foundLog,
+        log: foundLog,
       });
     })
     .catch((err) => {
@@ -124,18 +124,18 @@ console.log(`delete: ${req.params.id}`);
 app.get('/logs/seed/', async (req, res) => {
   await Log.create([
     {
-      name: "jonas",
-      gpa: "4.0",
+      title: "lost tire",
+      entry: "this is a spaceship. who cares.",
+      shipIsBroken: false,
+    },
+    {
+      title: "radiation leak",
+      entry: "more than usual",
       shipIsBroken: true,
     },
     {
-      name: "jane",
-      gpa: "4.4",
-      shipIsBroken: true,
-    },
-    {
-      name: "bo fliefson",
-      gpa: "1.23",
+      title: "myrtle ate the carburator",
+      entry: "this is a spaceship, not an old van. who cares.",
       shipIsBroken: false,
     },
   ])
@@ -148,19 +148,18 @@ app.get('/logs/seed/', async (req, res) => {
 });
   
 // Show
-
 app.get('/logs/:id', async (req, res) => {
   await Log.findById(req.params.id)
     .then((foundLog) => {
       res.render('Show', {
-        student: foundLog,
+        log: foundLog,
       });
-    })
-    .catch((err) => {
+    })   
+    .catch((err) => { 
       res.json(err);
-    })
+    }) 
 });
-
+ 
 
 app.listen(PORT, () => {
   console.log(`server listens on ${PORT}`);

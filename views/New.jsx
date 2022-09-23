@@ -16,7 +16,7 @@ class New extends React.Component {
             </div>
             <div className="form-field">
               <div className="form-label">Ship is broken:</div>
-              <input type="checkbox" name="shipIsBroken" />
+              <input type="checkbox" name="shipIsBroken" defaultChecked />
             </div>
             <div className="form-label"></div>
 
