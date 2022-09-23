@@ -190,4 +190,23 @@ a {
 }
 .delete-form input[type=submit] {
   margin-top: .2em;
+  width: fit-content;
+}
+
+.show-wrapper {
+  width: 260px;
+  margin: auto;
+  /* border: 2px solid blue; */
+}
+.show-wrapper .time-stamp-wrapper {
+  width: 280px;
+}
+.broken-ship-div {
+  width: 250px;
+  margin-bottom: 1em;
+}
+.show-back-to-log {
+  width: fit-content;
+  padding: .5em;
+  margin: auto;
 }

@@ -104,7 +104,7 @@ app.put('/logs/:id', async (req, res) => {
     })
     .catch ((err) => {
       res.json(err);
-    });
+    });   
 })
 // DELETE
 app.delete('/logs/:id', async (req, res) => {
@@ -144,9 +144,9 @@ app.get('/logs/seed/', async (req, res) => {
   })
   .catch((err) => {
     res.json(err);
-  })
+  }) 
 });
-  
+   
 // Show
 app.get('/logs/:id', async (req, res) => {
   await Log.findById(req.params.id)
