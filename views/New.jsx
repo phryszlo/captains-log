@@ -12,7 +12,7 @@ class New extends React.Component {
             </div>
             <div className="form-field">
               <div className="form-label">Entry:</div>
-              <input type="textarea" name="entry" />
+              <textarea rows="10" cols="40" wrap="hard" name="entry" />
             </div>
             <div className="form-field">
               <div className="form-label">Ship is broken:</div>
@@ -20,7 +20,10 @@ class New extends React.Component {
             </div>
             <div className="form-label"></div>
 
-            <input type="submit" name="" value="SUBMIT" />
+            <div className="edit-buttons">
+              <input type="submit" name="" value="SUBMIT" />
+              <a className="cancel-add-edit" href="/logs">CANCEL</a>
+            </div>
           </form>
         </div>
       </DefaultLayout>

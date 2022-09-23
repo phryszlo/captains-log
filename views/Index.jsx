@@ -16,13 +16,13 @@ class Index extends React.Component {
             return (
               <li key={index}>
                 <div className="time-stamp-wrapper">
-                  <h6 className="time-stamp">{
+                  <h5 className="time-stamp">{
                     log.createdAt ?
                     `${new Date(log.createdAt).toDateString()} 
                     ${new Date(log.createdAt).toLocaleTimeString('en-US')}`
                     :
                     `entered before captain added timestamps`
-                  }</h6>
+                  }</h5>
                 </div>
                 <div className="entry-title-wrapper">
                   <a className="entry-display-title" href={`/logs/${log.id}`}>{log.title}</a> <br />

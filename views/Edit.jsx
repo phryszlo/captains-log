@@ -33,7 +33,7 @@ class New extends React.Component {
             <div className="form-label"></div>
             <div className="edit-buttons">
               <input type="submit" name="" value="SUBMIT" />
-              <a className="cancel-edit" href="/logs">CANCEL</a>
+              <a className="cancel-add-edit" href="/logs">CANCEL</a>
             </div>
           </form>
         </div>
