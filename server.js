@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
      
 // Middlewares
 app.use(express.static('public')); 
-app.use(favicon(__dirname + '/public/images/favicon.ico'));
+app.use(favicon(__dirname + '/public/images/favicon.ico')); 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());

@@ -42,13 +42,13 @@ class Index extends React.Component {
                   }
                 </div>
                 <br />
-                {/* EDIT */}
-                <a className="edit-link" href={`/logs/${log.id}/edit`}>Edit log entry</a>
-                {/* DELETE */}
                 <form
                   action={`/logs/${log.id}?_method=DELETE`}
                   className="delete-form"
                   method="POST">
+                {/* EDIT */}
+                <a className="edit-link" href={`/logs/${log.id}/edit`}>Edit log entry</a>
+                {/* DELETE */}
                   <input type="submit" value="DELETE" />
                 </form>
                 <br /><hr /><br />
