@@ -8,7 +8,7 @@ const Log = require('./models/log.js');
 require('dotenv').config(); 
   
 const app = new express();
-const PORT = process.env.PORT || 3000;  
+const PORT = process.env.PORT || 3007;  
      
 // Middlewares
 app.use(express.static('public')); 
@@ -132,7 +132,7 @@ app.get('/logs/seed/', async (req, res) => {
       title: "radiation leak",
       entry: "more than usual",
       shipIsBroken: true,
-    },
+    },        
     {
       title: "myrtle ate the carburator",
       entry: "this is a spaceship, not an old van. who cares.",
